@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7cd0de1a-4a98-44ff-a27f-447cee0199a8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/scripts/mongodb.py" afterPath="$PROJECT_DIR$/scripts/mongodb.py" />
       <change beforePath="$PROJECT_DIR$/scripts/run_wrapper.py" afterPath="$PROJECT_DIR$/scripts/run_wrapper.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,10 +14,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="mongodb.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mongodb.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/mongodb.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
+            <state relative-caret-position="257">
               <caret line="46" column="20" lean-forward="false" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
@@ -27,11 +26,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="run_wrapper.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="run_wrapper.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/run_wrapper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="40" column="19" lean-forward="true" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+            <state relative-caret-position="266">
+              <caret line="41" column="31" lean-forward="false" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -72,8 +71,8 @@
         <option value="$PROJECT_DIR$/scripts/setup.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/setup.py" />
-        <option value="$PROJECT_DIR$/scripts/run_wrapper.py" />
         <option value="$PROJECT_DIR$/scripts/mongodb.py" />
+        <option value="$PROJECT_DIR$/scripts/run_wrapper.py" />
       </list>
     </option>
   </component>
@@ -198,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1514026856794</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Separated code to give list of commands">
+      <created>1514027908105</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1514027908105</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -236,7 +242,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Some changes" />
     <MESSAGE value="Command line logging" />
-    <option name="LAST_COMMIT_MESSAGE" value="Command line logging" />
+    <MESSAGE value="Separated code to give list of commands" />
+    <option name="LAST_COMMIT_MESSAGE" value="Separated code to give list of commands" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -331,16 +338,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/run_wrapper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="40" column="19" lean-forward="true" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -351,10 +348,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/mongodb.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
+        <state relative-caret-position="257">
           <caret line="46" column="20" lean-forward="false" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/run_wrapper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="41" column="31" lean-forward="false" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -39,5 +39,5 @@ def get_commands_split(command):
     ans = []
     for command in [x.strip() for x in command.split("\n")]:
         if command:
-            ans.append(shlex.split(command))
+            ans.append(command)
     return ans
