@@ -20,6 +20,8 @@ def install():
     """
     click.echo("Installing MongoDB 3.4 in ubuntu 16.04")
     for command in commands.split("\n"):
+        if not command:
+            continue
         script_output = run_wrapper.run_command(command)
         if not script_output.status:
             click.echo("Failed ...\n Error is: ")

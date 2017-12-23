@@ -9,8 +9,9 @@ class ScriptOutput:
         self.output = output
 
 
-def run_command(commands, **kwargs):
-    commands = shlex.split(commands)
+def run_command(command, **kwargs):
+    print('Command: {}'.format(command))
+    commands = shlex.split(command)
     file = open("test_file", "w")
     try:
         process = subprocess.run(commands, stdout=file)
