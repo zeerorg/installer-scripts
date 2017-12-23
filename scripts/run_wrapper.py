@@ -28,3 +28,16 @@ def run_command(command, **kwargs):
         file.close()
         return ScriptOutput(False, None, error)
     pass
+
+
+def get_commands_split(command):
+    """
+    Splits multi line commands to list of commands
+    :param command:
+    :return: list
+    """
+    ans = []
+    for command in [x.strip() for x in command.split("\n")]:
+        if command:
+            ans.append(shlex.split(command))
+    return ans

@@ -19,16 +19,14 @@ def install():
         sudo systemctl enable mongod
     """
     click.echo("Installing MongoDB 3.4 in ubuntu 16.04")
-    for command in commands.split("\n"):
-        if not command:
-            continue
+    for command in run_wrapper.get_commands_split(commands):
         script_output = run_wrapper.run_command(command)
         if not script_output.status:
             click.echo("Failed ...\n Error is: ")
             click.echo(script_output.output)
             return
-        else:
-            click.echo("Installation complete")
+    else:
+        click.echo("Installation complete")
     pass
 
 
@@ -39,7 +37,7 @@ def uninstall():
     commands = """
         sudo apt-get remove mongodb* --purge -y
     """
-    for command in commands.split("\n"):
+    for command in run_wrapper.get_commands_split(commands):
         script_output = run_wrapper.run_command(command)
         if not script_output.status:
             click.echo("Failed ...\n Error is: ")
