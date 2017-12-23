@@ -1,5 +1,4 @@
 import subprocess
-import os
 import shlex
 
 
@@ -20,7 +19,8 @@ def run_command(commands, **kwargs):
         output = file.read()
         file.close()
         return ScriptOutput(True, process, output)
-    except Exception:
+    except Exception as e:
+        print(e)
         file.close()
         file = open("test_file")
         error = file.read()
