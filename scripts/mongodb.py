@@ -23,6 +23,7 @@ def install():
         script_output = run_wrapper.run_command(command)
         if not script_output.status:
             click.echo("Failed ...\n Error is: ")
+            click.echo(script_output.output)
             return
 
     click.echo("Installation complete")
@@ -40,6 +41,7 @@ def uninstall():
         script_output = run_wrapper.run_command(command)
         if not script_output.status:
             click.echo("Failed ...\n Error is: ")
+            click.echo(script_output.output)
             return
 
     click.echo("Uninstalled MongoDB")

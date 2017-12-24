@@ -22,7 +22,6 @@ def run_command(command):
     """
     logging.info('Command: {}'.format(command))
     commands = shlex.split(command)
-    file = open("test_file", "w")
     process = subprocess.Popen(commands, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     output, errs = process.communicate()
     if errs:
