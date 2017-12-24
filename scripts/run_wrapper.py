@@ -23,21 +23,11 @@ def run_command(command):
     logging.info('Command: {}'.format(command))
     commands = shlex.split(command)
     file = open("test_file", "w")
-    try:
-        process = subprocess.run(commands, stdout=file)
-        file.close()
-        file = open("test_file")
-        output = file.read()
-        file.close()
-        return ScriptOutput(True, process, output)
-    except Exception as e:
-        print(e)
-        file.close()
-        file = open("test_file")
-        error = file.read()
-        file.close()
-        return ScriptOutput(False, None, error)
-    pass
+    process = subprocess.Popen(commands, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    output, errs = process.communicate()
+    if errs:
+        return ScriptOutput(False, None, errs.decode("utf-8"))
+    return ScriptOutput(True, process, output.decode("utf-8"))
 
 
 def get_commands_split(command):

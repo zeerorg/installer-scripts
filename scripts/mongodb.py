@@ -23,11 +23,9 @@ def install():
         script_output = run_wrapper.run_command(command)
         if not script_output.status:
             click.echo("Failed ...\n Error is: ")
-            # click.echo(script_output.output)
             return
-    else:
-        click.echo("Installation complete")
-    pass
+
+    click.echo("Installation complete")
 
 
 def uninstall():
@@ -36,13 +34,12 @@ def uninstall():
     """
     commands = """
         sudo apt-get remove mongodb* --purge -y
+        sudo rm /etc/apt/sources.list.d/mongodb-org-3.6.list
     """
     for command in run_wrapper.get_commands_split(commands):
         script_output = run_wrapper.run_command(command)
         if not script_output.status:
             click.echo("Failed ...\n Error is: ")
-            click.echo(script_output.output)
             return
-        else:
-            click.echo("Uninstalled MongoDB")
-    pass
+
+    click.echo("Uninstalled MongoDB")
