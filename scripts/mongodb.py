@@ -24,7 +24,8 @@ def install():
         if not script_output.status:
             click.echo("Failed ...\n Error is: ")
             click.echo(script_output.output)
-            return
+            if input("Continue (Y/n): ").lower() == 'n':
+                return
 
     click.echo("Installation complete")
 
@@ -42,6 +43,7 @@ def uninstall():
         if not script_output.status:
             click.echo("Failed ...\n Error is: ")
             click.echo(script_output.output)
-            return
+            if input("Continue (Y/n): ").lower() == 'n':
+                return
 
     click.echo("Uninstalled MongoDB")
