@@ -1,5 +1,6 @@
 import click
 from scripts import mongodb
+import pytest
 
 
 @click.group()
@@ -13,6 +14,11 @@ def mongo():
     Admin tasks related to Mongo DB
     """
     click.echo("Working on MongoDB for Ubuntu 16.04")
+
+
+@cli.group(name="test")
+def test():
+    pytest.main()
 
 
 @mongo.command(name="install")

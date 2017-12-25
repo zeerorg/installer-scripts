@@ -1,9 +1,24 @@
-from scripts import run_wrapper
 import click
+import pymongo
+
+from scripts import run_wrapper
+from pymongo.errors import ServerSelectionTimeoutError
 
 
-def test():
-    click.echo("Testing mongodb module")
+def test(username=None, password=None):
+    """
+    Test a client connection to local MongoDB install
+
+    :param username: (str)
+    :param password: (str)
+    :return: (bool)
+    """
+    client = pymongo.MongoClient(username=username, password=password, serverSelectionTimeoutMS=200)
+    try:
+        client.server_info()
+    except ServerSelectionTimeoutError as err:
+        return False
+    return True
 
 
 def install():
@@ -21,11 +36,6 @@ def install():
     click.echo("Installing MongoDB 3.4 in ubuntu 16.04")
     for command in run_wrapper.get_commands_split(commands):
         script_output = run_wrapper.run_command(command)
-        if not script_output.status:
-            click.echo("Failed ...\n Error is: ")
-            click.echo(script_output.output)
-            if input("Continue (Y/n): ").lower() == 'n':
-                return
 
     click.echo("Installation complete")
 
@@ -40,10 +50,5 @@ def uninstall():
     """
     for command in run_wrapper.get_commands_split(commands):
         script_output = run_wrapper.run_command(command)
-        if not script_output.status:
-            click.echo("Failed ...\n Error is: ")
-            click.echo(script_output.output)
-            if input("Continue (Y/n): ").lower() == 'n':
-                return
 
     click.echo("Uninstalled MongoDB")
