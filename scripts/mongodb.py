@@ -45,8 +45,11 @@ def uninstall():
     Uninstall MongoDb ubuntu 16.04
     """
     commands = """
+        sudo systemctl disable mongod
+        sudo systemctl stop mongod
         sudo apt-get remove mongodb* --purge -y
         sudo rm /etc/apt/sources.list.d/mongodb-org-3.6.list
+        sudo apt-key del 0C49F3730359A14518585931BC711F9BA15703C6
     """
     for command in run_wrapper.get_commands_split(commands):
         script_output = run_wrapper.run_command(command)
