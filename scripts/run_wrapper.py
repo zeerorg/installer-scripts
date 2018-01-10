@@ -41,3 +41,14 @@ def get_commands_split(command):
         if command:
             ans.append(command)
     return ans
+
+
+def commands_to_single_line(commands):
+    """
+    Multi line commands to single line command with ";" separator
+
+    :param commands:
+    :return:
+    """
+    comm_list = get_commands_split(commands)
+    return ';'.join(comm_list)

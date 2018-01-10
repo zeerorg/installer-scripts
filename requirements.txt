@@ -1,4 +1,3 @@
 args==0.1.0
 click==6.7
 clint==0.5.1
--e git+https://github.com/zeerorg/installer-scripts.git@222132f6bd216be3211448fbe982bdfda1c37a70#egg=Intasker

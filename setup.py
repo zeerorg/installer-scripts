@@ -11,6 +11,6 @@ setup(
     ],
     entry_points="""
         [console_scripts]
-        intasker=main:cli
+        qstaller=main:cli
     """
 )
